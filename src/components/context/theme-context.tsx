@@ -10,8 +10,8 @@ const ThemeContext = React.createContext({
 })
 
 export const ThemeContextProvider = (props: Props) => {
-  const storedTheme = !!localStorage.getItem('darkTheme')
-  const token = !storedTheme ? false : true
+  const storedTheme = localStorage.getItem('darkTheme')
+  const token = storedTheme === 'true' ? true : false
   const [isDark, setIsDark] = useState(token)
 
   const changeThemeHandler = () => {

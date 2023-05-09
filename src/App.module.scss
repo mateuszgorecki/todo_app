@@ -3,4 +3,12 @@
 .app {
   width: 100vw;
   height: 100vh;
+  background: url('./images/bg-desktop-light.jpg') no-repeat $very-light-gray;
+  background-size: contain;
+  transition: all 200ms ease-in-out;
+}
+
+.dark {
+  background: url('./images/bg-desktop-dark.jpg') no-repeat $very-dark-blue;
+  background-size: contain;
 }
