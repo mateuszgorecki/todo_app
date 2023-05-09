@@ -1,15 +1,23 @@
-import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <div>
       Challenge by{' '}
-      <Link
-        to='https://www.frontendmentor.io?ref=challenge'
+      <a
+        href='https://www.frontendmentor.io?ref=challenge'
         target='_blank'
+        rel='noreferrer'
       >
         Frontend Mentor
-      </Link>
-      . Coded by <Link to='mateusz-gorecki.dev'>Me</Link>.
+      </a>
+      . Coded by{' '}
+      <a
+        href='https://mateusz-gorecki.dev'
+        target='_blank'
+        rel='noreferrer'
+      >
+        Me
+      </a>
+      .
     </div>
   )
 }

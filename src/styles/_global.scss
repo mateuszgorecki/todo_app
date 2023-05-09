@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+@import './colors';
+
+:root {
+  --max_content_width: 540px;
+  --content_padding: 20px;
+}
 
 * {
   box-sizing: border-box;
@@ -6,8 +12,13 @@
   padding: 0;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
+  color: $light-grayish-blue;
 }
 
+body {
+  background: url('../images/bg-desktop-dark.jpg') no-repeat $very-dark-blue;
+  background-size: contain;
+}
 
 // breakpoints 375px & 1440px
 // content 540px max
