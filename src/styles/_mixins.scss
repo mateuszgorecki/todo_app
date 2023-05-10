@@ -1,3 +1,26 @@
 @mixin themeTransition {
   transition: all 0.2s ease-in-out;
 }
+
+@mixin checkButton {
+  background: transparent;
+  border-radius: 50%;
+  margin: 0 20px;
+  height: 24px;
+  width: 24px;
+  border: 1px solid $very-dark-grayish-blue-2;
+  cursor: pointer;
+
+  &::after {
+    @include themeTransition;
+    content: url('../images/icon-check.svg');
+    background: $check-background;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    opacity: 0;
+  }
+}

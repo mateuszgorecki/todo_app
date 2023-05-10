@@ -16,29 +16,9 @@
     width: 100%;
 
     button {
-      background: transparent;
-      border-radius: 50%;
-      margin: 0 20px;
-      height: 24px;
-      width: 24px;
-      border: 1px solid $very-dark-grayish-blue-2;
-
-      &::after {
-        @include themeTransition;
-        content: url('../images/icon-check.svg');
-        background: $check-background;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-        opacity: 0;
-      }
+      @include checkButton;
 
       &:hover {
-        cursor: pointer;
-
         &::after {
           opacity: 1;
         }

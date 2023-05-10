@@ -1,0 +1,94 @@
+@import '../styles/_mixins';
+@import '../styles/_colors';
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px 10px;
+  width: 100%;
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:first-of-type {
+      @include themeTransition;
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      background: $check-background;
+      position: relative;
+      border: 1px solid $very-light-grayish-blue;
+
+      &::before {
+        @include themeTransition;
+        content: url('../images/icon-check.svg');
+      }
+
+      &::after {
+        @include themeTransition;
+        content: '';
+        background: $very-light-gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 22px;
+        width: 22px;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:hover {
+        border: none;
+      }
+    }
+  }
+
+  p {
+    max-width: 410px;
+    width: 100%;
+  }
+}
+
+.completed {
+  button {
+    &:first-of-type {
+      &:hover {
+        border: 1px solid $very-light-grayish-blue;
+      }
+
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.dark {
+  button {
+
+    &:first-of-type {
+      border: 1px solid $very-dark-grayish-blue-2;
+
+      &::after {
+        background: $very-dark-desaturated-blue;
+      }
+    }
+  }
+
+  .completed {
+    button {
+      &:first-of-type {
+        &:hover {
+          border: 1px solid $very-dark-grayish-blue-2;
+        }
+      }
+    }
+  }
+}
