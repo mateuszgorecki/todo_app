@@ -2,13 +2,17 @@
 @import '../styles/_colors';
 
 .btn {
+  @include themeTransition;
   width: 26px;
   height: 26px;
   background-color: transparent;
   border: none;
   cursor: pointer;
   background: url('../images/icon-moon.svg') no-repeat center;
-  @include themeTransition;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .dark {

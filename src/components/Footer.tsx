@@ -1,6 +1,9 @@
+
+import styles from './Footer.module.scss'
+
 const Footer = () => {
   return (
-    <div>
+    <footer className={styles.footer}>
       Challenge by{' '}
       <a
         href='https://www.frontendmentor.io?ref=challenge'
@@ -18,7 +21,7 @@ const Footer = () => {
         Me
       </a>
       .
-    </div>
+    </footer>
   )
 }
 
