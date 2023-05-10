@@ -3,7 +3,7 @@
 
 :root {
   --max_content_width: 580px;
-  --content_margin: 20px;
+  --content_padding: 20px;
 }
 
 * {
@@ -14,6 +14,3 @@
   font-size: 18px;
   color: $light-grayish-blue;
 }
-
-// breakpoints 375px & 1440px
-// content 540px max

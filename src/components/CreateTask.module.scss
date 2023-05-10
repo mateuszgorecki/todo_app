@@ -1,0 +1,62 @@
+@import '../styles/_mixins';
+@import '../styles/_colors';
+
+.wrapper {
+  @include themeTransition;
+  display: flex;
+  height: 60px;
+  max-width: var(--max_content_width);
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+
+  form {
+    display: inherit;
+    width: 100%;
+
+    button {
+      // @include themeTransition;
+      background: transparent;
+      border-radius: 50%;
+      margin: 0 20px;
+      height: 24px;
+      width: 24px;
+      border: 1px solid $very-dark-grayish-blue-2;
+
+      &::after {
+        @include themeTransition;
+        content: url('../images/icon-check.svg');
+        background: $check-background;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        opacity: 0;
+      }
+
+      &:hover {
+        // background: $check-background;
+        cursor: pointer;
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    input {
+      border: none;
+      background: none;
+      outline: none;
+      font-size: 16px;
+      max-width: 410px;
+      width: 100%;
+      padding: 5px 0;
+      font-weight: 400;
+      caret-color: $bright-blue;
+    }
+  }
+}

@@ -1,5 +1,19 @@
-@import './colors';
+@import '../styles/_mixins';
+@import '../styles/_colors';
 
 .wrapper {
+  @include themeTransition;
   display: flex;
+  height: 60px;
+  max-width: var(--max_content_width);
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+
+  background-color: $very-light-gray;
+}
+
+.dark {
+  background-color: $very-dark-desaturated-blue;
 }
