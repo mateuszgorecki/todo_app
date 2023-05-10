@@ -1,0 +1,16 @@
+@import '../styles/_mixins';
+@import '../styles/_colors';
+
+.btn {
+  width: 26px;
+  height: 26px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  background: url('../images/icon-moon.svg') no-repeat center;
+  @include themeTransition;
+}
+
+.dark {
+  background: url('../images/icon-sun.svg') no-repeat center;
+}

@@ -1,0 +1,22 @@
+@import '../styles/_mixins';
+@import '../styles/_colors';
+
+.wrapper {
+  max-width: var(--max_content_width);
+  width: 100%;
+  height: fit-content;
+
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px var(--content_margin) 45px;
+
+  h1 {
+    font-size: 40px;
+    color: $very-light-gray;
+    letter-spacing: 15px;
+    font-weight: 700;
+    line-height: 120%;
+  }
+}

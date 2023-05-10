@@ -1,5 +1,14 @@
+import ThemeBtn from './ThemeBtn'
+
+import classes from './Header.module.scss'
+
 const Header = () => {
-  return <div></div>
+  return (
+    <header className={classes.wrapper}>
+      <h1>TODO</h1>
+      <ThemeBtn />
+    </header>
+  )
 }
 
 export default Header
