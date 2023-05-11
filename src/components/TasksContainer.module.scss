@@ -2,12 +2,16 @@
 @import '../styles/_colors';
 
 .container {
+  @include themeTransition;
+  @include lightShadow;
   width: 100%;
   display: flex;
   flex-direction: column;
   background-color: $white;
+  border-radius: 5px;
 }
 
 .dark {
+  @include darkShadow;
   background-color: $very-dark-desaturated-blue;
 }

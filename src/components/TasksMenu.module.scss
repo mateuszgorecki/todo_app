@@ -27,3 +27,17 @@
     }
   }
 }
+
+.dark {
+  p {
+   color: $very-dark-grayish-blue;
+  }
+
+  button {
+    color: $very-dark-grayish-blue;
+
+    &:hover {
+      color: $light-global-bg;
+    }
+  }
+}

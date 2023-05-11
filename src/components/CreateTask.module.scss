@@ -35,7 +35,6 @@
       font-size: 18px;
       max-width: 410px;
       width: 100%;
-      // padding: 5px 0;
       font-weight: 400;
       caret-color: $bright-blue;
       color: $darkest-text;
@@ -52,6 +51,10 @@
   form {
     button {
       border: 1px solid $very-dark-grayish-blue-2;
+    }
+
+    input {
+      color: $light-grayish-blue-1;
     }
   }
 }

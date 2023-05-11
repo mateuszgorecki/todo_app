@@ -127,6 +127,8 @@
 }
 
 .dark {
+  border-bottom: 1px solid $very-dark-grayish-blue;
+
   button {
     &:first-of-type {
       border: 1px solid $very-dark-grayish-blue-2;
@@ -151,13 +153,22 @@
     }
   }
 
+  p {
+    color: $light-grayish-blue-1 ;
+  }
+
   &.completed {
+
     button {
       &:first-of-type {
         &:hover {
           border: 1px solid $very-dark-grayish-blue-2 !important;
         }
       }
+    }
+
+    p {
+      color: $very-dark-grayish-blue;
     }
   }
 }
