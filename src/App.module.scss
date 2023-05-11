@@ -4,6 +4,7 @@
 .app {
   @include themeTransition;
   width: 100vw;
+  min-height: 100vh;
   // height: 100vh;
   height: fit-content;
   background: url('./images/bg-desktop-light.jpg') no-repeat $very-light-gray;
