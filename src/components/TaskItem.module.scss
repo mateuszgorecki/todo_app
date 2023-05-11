@@ -6,8 +6,9 @@
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
-  padding: 20px 10px;
+  padding: 20px;
   width: 100%;
+  border-bottom: 1px solid $very-light-grayish-blue;
 
   button {
     background: none;
@@ -31,7 +32,7 @@
       &::after {
         @include themeTransition;
         content: '';
-        background: $very-light-gray;
+        background: $white;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -48,11 +49,61 @@
         border: none;
       }
     }
+
+    &:last-of-type {
+      @include themeTransition;
+      width: 25px;
+      height: 25px;
+      position: relative;
+      opacity: 0;
+
+      &::after {
+        @include crossBtn;
+        background: $very-dark-grayish-blue;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &::before {
+        @include crossBtn;
+        background: $very-dark-grayish-blue;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      &:hover {
+        filter: brightness(2);
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    button {
+      &:last-of-type {
+        opacity: 1;
+      }
+    }
   }
 
   p {
-    max-width: 410px;
+    max-width: 450px;
     width: 100%;
+    font-weight: 400;
+    color: $darkest-text;
+    position: relative;
+
+    // &::after {
+    //   content: '';
+    //   display: block;
+    //   height: .5px;
+    //   width: 100%;
+    //   background-color: $darkest-text;
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 0;
+    //   transform: translateY(-50%);
+
+    // }
   }
 }
 
@@ -68,11 +119,15 @@
       }
     }
   }
+
+  p {
+    text-decoration: line-through;
+    color: $very-light-grayish-blue;
+  }
 }
 
 .dark {
   button {
-
     &:first-of-type {
       border: 1px solid $very-dark-grayish-blue-2;
 
@@ -80,13 +135,27 @@
         background: $very-dark-desaturated-blue;
       }
     }
+
+    &:last-of-type {
+      &::after {
+        background: $very-dark-grayish-blue;
+      }
+
+      &::before {
+        background: $very-dark-grayish-blue;
+      }
+
+      &:hover {
+        filter: brightness(2);
+      }
+    }
   }
 
-  .completed {
+  &.completed {
     button {
       &:first-of-type {
         &:hover {
-          border: 1px solid $very-dark-grayish-blue-2;
+          border: 1px solid $very-dark-grayish-blue-2 !important;
         }
       }
     }

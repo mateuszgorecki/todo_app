@@ -7,7 +7,7 @@
   min-height: 100vh;
   // height: 100vh;
   height: fit-content;
-  background: url('./images/bg-desktop-light.jpg') no-repeat $very-light-gray;
+  background: url('./images/bg-desktop-light.jpg') no-repeat $light-global-bg;
   background-size: contain;
   display: flex;
   flex-direction: column;

@@ -5,17 +5,27 @@
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 10px;
+  gap: 15px;
+  transform: translateX(10%);
 
-  li{
+  li {
+    &:first-child {
+      button {
+        color: $bright-blue;
+        &:hover {
+          color: $bright-blue;
+        }
+      }
+    }
 
     button {
       @include themeTransition;
       background: none;
       border: none;
+      font-size: 16px;
     }
 
-    &:hover{
+    &:hover {
       button {
         color: $very-dark-blue;
       }
@@ -24,12 +34,19 @@
 }
 
 .dark {
-  li{
-
-    &:hover{
+  li {
+    &:hover {
       button {
-        color: $very-light-gray;
+        color: $light-global-bg;
       }
     }
+  }
+}
+
+.active {
+  color: $bright-blue;
+
+  &:hover {
+    color: $bright-blue;
   }
 }

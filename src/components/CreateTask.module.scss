@@ -16,9 +16,12 @@
     width: 100%;
 
     button {
+      @include themeTransition;
       @include checkButton;
+      border: 1px solid $very-light-grayish-blue;;
 
       &:hover {
+        border-color: transparent;
         &::after {
           opacity: 1;
         }
@@ -29,12 +32,26 @@
       border: none;
       background: none;
       outline: none;
-      font-size: 16px;
+      font-size: 18px;
       max-width: 410px;
       width: 100%;
-      padding: 5px 0;
+      // padding: 5px 0;
       font-weight: 400;
       caret-color: $bright-blue;
+      color: $darkest-text;
+
+      &::placeholder {
+        color: $dark-grayish-blue;
+      }
+    }
+  }
+}
+
+
+.dark {
+  form {
+    button {
+      border: 1px solid $very-dark-grayish-blue-2;
     }
   }
 }

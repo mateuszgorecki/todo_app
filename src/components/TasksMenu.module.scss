@@ -6,4 +6,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 15px;
+
+  p {
+    @include themeTransition;
+    font-size: 14px;
+    color: $light-grayish-blue;
+  }
+
+  button {
+    @include themeTransition;
+    color: $light-grayish-blue;
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+      color: $very-dark-blue;
+    }
+  }
 }
