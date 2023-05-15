@@ -1,4 +1,5 @@
-import { useContext } from 'react'
+import {useContext } from 'react'
+import ShowFilter from './ShowFilter'
 
 import CreateTask from './CreateTask'
 import TasksContainer from './TasksContainer'
@@ -18,6 +19,7 @@ const Main = () => {
         <CreateTask isDark={isDark} />
         <TasksContainer isDark={isDark} />
       </div>
+      <ShowFilter isDark={isDark} deviceType='mobile' />
       <p>Drag and drop to reorder list</p>
     </main>
   )

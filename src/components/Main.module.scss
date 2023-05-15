@@ -3,6 +3,7 @@
 
 .main {
   max-width: var(--max_content_width);
+  padding: var(--content_padding);
   width: 100%;
   height: fit-content;
   display: flex;

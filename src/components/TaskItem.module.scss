@@ -18,7 +18,8 @@
     &:first-of-type {
       @include themeTransition;
       height: 24px;
-      width: 24px;
+      width: 100%;
+      max-width: 24px;
       border-radius: 50%;
       background: $check-background;
       position: relative;

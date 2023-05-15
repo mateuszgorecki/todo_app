@@ -35,6 +35,10 @@
 
 .dark {
   li {
+    button {
+      color: $very-dark-grayish-blue;
+    }
+
     &:hover {
       button {
         color: $light-global-bg;
@@ -48,5 +52,22 @@
 
   &:hover {
     color: $bright-blue;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .filter {
+    @include lightShadow;
+    width: 100%;
+    padding: var(--content_padding);
+    background-color: $white;
+    transform: none;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .dark {
+    @include darkShadow;
+    background-color: $very-dark-desaturated-blue;
   }
 }
