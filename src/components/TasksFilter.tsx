@@ -11,15 +11,15 @@ const TasksFilter = ({ isDark }: Props) => {
   const ctx = useContext(TasksContext)
 
   const showAllTasksHandler = () => {
-    ctx.showAllTasks()
+    ctx.filterTasks('all')
   }
 
   const showActiveTasksHandler = () => {
-    ctx.showActiveTasks()
+    ctx.filterTasks('active')
   }
 
   const showCompletedTasksHandler = () => {
-    ctx.showCompletedTasks()
+    ctx.filterTasks('completed')
   }
 
   return (

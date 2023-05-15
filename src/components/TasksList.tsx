@@ -8,7 +8,7 @@ interface Props {
 
 const TasksList = ({ isDark }: Props) => {
   const ctx = useContext(TasksContext)
-  const tasks = ctx.tasks
+  const tasks = ctx.filteredTasks
 
   return (
     <ul>
