@@ -5,16 +5,51 @@
   @include themeTransition;
   width: 100vw;
   min-height: 100vh;
-  // height: 100vh;
   height: fit-content;
-  background: url('./images/bg-desktop-light.jpg') no-repeat $light-global-bg;
-  background-size: contain;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  background-color: $light-global-bg;
+
+  & > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('./images/bg-desktop-light.jpg') no-repeat;
+    background-size: cover;
+    background-position: 21%;
+    width: 100%;
+    height: 300px;
+    z-index: 0;
+  }
 }
 
 .dark {
-  background: url('./images/bg-desktop-dark.jpg') no-repeat $very-dark-blue;
-  background-size: contain;
+  background-color: $very-dark-blue;
+  & > div {
+    background: url('./images/bg-desktop-dark.jpg') no-repeat;
+    background-size: cover;
+    background-position: 21%;
+  }
+}
+
+
+@media screen and (max-width: 479px) {
+  .app {
+    & > div {
+      height: 200px;
+      background: url('./images/bg-mobile-light.jpg') no-repeat;
+      background-size: cover;
+      background-position: 80%;
+    }
+  }
+
+  .dark {
+    & > div {
+      background: url('./images/bg-desktop-dark.jpg') no-repeat;
+      background-size: cover;
+      background-position: 25%;
+    }
+  }
 }

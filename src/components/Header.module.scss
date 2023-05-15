@@ -5,8 +5,7 @@
   max-width: var(--max_content_width);
   width: 100%;
   height: fit-content;
-
-
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,5 +17,16 @@
     letter-spacing: 15px;
     font-weight: 700;
     line-height: 120%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .wrapper {
+    padding: 45px var(--content_padding) 20px;
+
+    h1 {
+      font-size: 30px;
+      letter-spacing: 10px;
+    }
   }
 }

@@ -173,3 +173,36 @@
     }
   }
 }
+
+@media screen and (max-width: 479px) {
+  .item {
+    gap: 15px;
+    padding: 14px 20px;
+
+    button {
+      &:first-of-type {
+        height: 20px;
+        width: 100%;
+        max-width: 20px;
+
+        &::after {
+          height: 18px;
+          width: 18px;
+        }
+
+      }
+
+      &:last-of-type {
+        width: 20px;
+        height: 20px;
+        opacity: 1;
+      }
+    }
+
+    p {
+      max-width: 450px;
+      font-size: 15px;
+    }
+  }
+
+}

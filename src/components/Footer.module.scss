@@ -31,3 +31,14 @@
     }
   }
 }
+
+@media screen and (max-width: 479px) {
+  .footer {
+    font-size: 15px;
+    margin: 10px 0 15px;
+
+    a {
+      font-size: 15px
+    }
+  }
+}

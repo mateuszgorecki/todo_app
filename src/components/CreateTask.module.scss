@@ -4,7 +4,6 @@
 .wrapper {
   @include themeTransition;
   display: flex;
-  height: 60px;
   max-width: var(--max_content_width);
   width: 100%;
   border-radius: 5px;
@@ -18,7 +17,7 @@
     button {
       @include themeTransition;
       @include checkButton;
-      border: 1px solid $very-light-grayish-blue;;
+      border: 1px solid $very-light-grayish-blue;
 
       &:hover {
         border-color: transparent;
@@ -46,7 +45,6 @@
   }
 }
 
-
 .dark {
   form {
     button {
@@ -55,6 +53,16 @@
 
     input {
       color: $light-grayish-blue-1;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .wrapper {
+    form {
+      input {
+        font-size: 14px;
+      }
     }
   }
 }

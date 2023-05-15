@@ -17,3 +17,9 @@
 .dark {
   background-color: $very-dark-desaturated-blue;
 }
+
+@media screen and (max-width: 479px) {
+  .wrapper {
+    height: 48px;
+  }
+}

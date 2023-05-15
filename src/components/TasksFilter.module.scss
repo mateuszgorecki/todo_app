@@ -61,9 +61,10 @@
     width: 100%;
     padding: var(--content_padding);
     background-color: $white;
-    transform: none;
+    transform: translateY(-15px);
     justify-content: center;
     gap: 20px;
+    border-radius: 5px;
   }
 
   .dark {
