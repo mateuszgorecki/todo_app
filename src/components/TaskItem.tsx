@@ -16,13 +16,17 @@ const TaskItem = (props: Props) => {
     ctx.removeTask(props.id)
   }
 
+  const completeTaskHandler = () => {
+    ctx.completeTask(props.id)
+  }
+
   const isCompletedStyles = props.isCompleted ? styles.completed : ''
   const isDarkStyles = props.isDark ? styles.dark : ''
   const classes = `${styles.item} ${isCompletedStyles} ${isDarkStyles}`
 
   return (
     <li className={classes}>
-      <button></button>
+      <button onClick={completeTaskHandler}></button>
       <p>{props.text}</p>
       <button onClick={deleteTaskHandler}></button>
     </li>

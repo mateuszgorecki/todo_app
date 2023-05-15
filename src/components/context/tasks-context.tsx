@@ -60,7 +60,7 @@ export const TasksContextProvider = (props: Props) => {
     setTasks((prev) =>
       prev.map((task) => {
         if (task.id === taskId) {
-          return { ...task, completed: !task.isCompleted }
+          return { ...task, isCompleted: !task.isCompleted }
         }
         return task
       })
