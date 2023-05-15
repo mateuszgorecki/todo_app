@@ -10,6 +10,9 @@ const TasksMenu = () => {
   const isDark = themeCtx.isDarkTheme
 
   const ctx = useContext(TasksContext)
+  const tasks = ctx.tasks
+
+  const activeTasks = tasks.filter((task) => !task.isCompleted).length
 
   const clearCompletedTasksHandler = () => {
     ctx.clearCompletedTasks()
@@ -19,7 +22,7 @@ const TasksMenu = () => {
 
   return (
     <div className={classes}>
-      <p>5 items left</p>
+      <p>{activeTasks} items left</p>
       <ShowFilter
         deviceType='desktop'
         isDark={isDark}
