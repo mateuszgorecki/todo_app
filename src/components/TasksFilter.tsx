@@ -22,6 +22,8 @@ const TasksFilter = ({ isDark }: Props) => {
     ctx.filterTasks('completed')
   }
 
+  //TODO: set filter text highlighting properly
+
   return (
     <ul className={classes}>
       <li>

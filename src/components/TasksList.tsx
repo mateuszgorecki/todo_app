@@ -10,6 +10,10 @@ const TasksList = ({ isDark }: Props) => {
   const ctx = useContext(TasksContext)
   const tasks = ctx.filteredTasks
 
+//TODO: Drag and drop
+//TODO: min and max height of list
+//TODO: set status when list is empty
+
   return (
     <ul>
       {tasks.map(({ id, title, isCompleted }) => (
