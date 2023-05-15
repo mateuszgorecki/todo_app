@@ -17,6 +17,7 @@ const CreateTask = ({ isDark }: Props) => {
         <input
           type='text'
           placeholder='Create a new todo...'
+          maxLength={30}
         />
       </form>
     </TaskWrapper>
