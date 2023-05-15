@@ -46,11 +46,21 @@ const TasksContext = React.createContext({
   tasks: initialState,
   addTask: (task: Task) => {},
   completeTask: (taskId: number) => {},
+  showAllTasks: () => {},
   removeTask: (taskId: number) => {},
+  showActiveTasks: () => {},
+  showCompletedTasks: () => {},
+  clearCompletedTasks: () => {},
 })
 
 export const TasksContextProvider = (props: Props) => {
   const [tasks, setTasks] = useState(initialState)
+
+  const allTasks = tasks
+
+  const activeTasks = tasks.filter((task) => !task.isCompleted)
+
+  const completedTasks = tasks.filter((task) => task.isCompleted)
 
   const addTaskHandler = (task: Task) => {
     setTasks((prev) => [task, ...prev])
@@ -71,11 +81,31 @@ export const TasksContextProvider = (props: Props) => {
     setTasks((prev) => prev.filter((task) => task.id !== taskId))
   }
 
+  const showAllTasks = () => {
+    setTasks(allTasks)
+  }
+
+  const showActiveTasks = () => {
+    setTasks(activeTasks)
+  }
+
+  const showCompletedTasks = () => {
+    setTasks(completedTasks)
+  }
+
+  const clearCompletedTasks = () => {
+    setTasks(tasks.filter((task) => !task.isCompleted))
+  }
+
   const contextValue = {
     tasks: tasks,
     addTask: addTaskHandler,
     completeTask: completeTaskHandler,
     removeTask: removeTaskHandler,
+    showAllTasks: showAllTasks,
+    showActiveTasks: showActiveTasks,
+    showCompletedTasks: showCompletedTasks,
+    clearCompletedTasks: clearCompletedTasks,
   }
 
   return (
