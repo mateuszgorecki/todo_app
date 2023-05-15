@@ -14,8 +14,6 @@ const CreateTask = ({ isDark }: Props) => {
   const [title, setTitle] = useState('')
   const classes = `${styles.wrapper} ${isDark ? styles.dark : ''}`
 
-//TODO: add length validation (max 30 characters)
-
   const setTitleHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value)
   }
