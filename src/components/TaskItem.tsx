@@ -15,15 +15,11 @@ interface Props {
 const TaskItem = (props: Props) => {
   const ctx = useContext(TasksContext)
   const deleteTaskHandler = () => {
-    requestAnimationFrame(() => {
-      ctx.removeTask(props.id)
-    })
+    ctx.removeTask(props.id)
   }
 
   const completeTaskHandler = () => {
-    requestAnimationFrame(() => {
-      ctx.completeTask(props.id)
-    })
+    ctx.completeTask(props.id)
   }
 
   const isCompletedStyles = props.isCompleted ? styles.completed : ''
@@ -37,7 +33,7 @@ const TaskItem = (props: Props) => {
       key={props.id}
     >
       {(provided: any) => (
-        <div
+        <li
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
@@ -46,7 +42,7 @@ const TaskItem = (props: Props) => {
           <button onClick={completeTaskHandler}></button>
           <p>{props.text}</p>
           <button onClick={deleteTaskHandler}></button>
-        </div>
+        </li>
       )}
     </Draggable>
   )

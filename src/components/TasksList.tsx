@@ -1,6 +1,7 @@
 import { useContext } from 'react'
-import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import { DragDropContext } from 'react-beautiful-dnd'
 import TaskItem from './TaskItem'
+import StrictModeDroppable from './StrictModeDroppable'
 import TasksContext from './context/tasks-context'
 
 import classes from './TasksList.module.scss'
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const TasksList = ({ isDark }: Props) => {
+
   const ctx = useContext(TasksContext)
   const tasks = ctx.filteredTasks.map(({ id, title, isCompleted }, index) => {
     return (
@@ -44,18 +46,18 @@ const TasksList = ({ isDark }: Props) => {
 
   return (
     <DragDropContext onDragEnd={onDragEndHandler}>
-      <Droppable droppableId='droppable'>
+      <StrictModeDroppable droppableId='droppable'>
         {(provided: any) => (
-          <div
+          <ul
             ref={provided.innerRef}
             {...provided.droppableProps}
             className={classes.list}
           >
             {tasks.length > 0 ? tasks : flag}
             {provided.placeholder}
-          </div>
+          </ul>
         )}
-      </Droppable>
+      </StrictModeDroppable>
     </DragDropContext>
   )
 }

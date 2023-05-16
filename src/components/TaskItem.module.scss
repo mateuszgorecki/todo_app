@@ -10,6 +10,7 @@
   width: 100%;
   max-height: var(--task_height);
   border-bottom: 1px solid $very-light-grayish-blue;
+  background-color: $white;
 
   button {
     background: none;
@@ -117,6 +118,7 @@
 
 .dark {
   border-bottom: 1px solid $very-dark-grayish-blue;
+  background-color: $very-dark-desaturated-blue;
 
   button {
     &:first-of-type {
