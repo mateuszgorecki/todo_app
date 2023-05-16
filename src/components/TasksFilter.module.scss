@@ -9,20 +9,20 @@
   transform: translateX(10%);
 
   li {
-    &:first-child {
-      button {
-        color: $bright-blue;
-        &:hover {
-          color: $bright-blue;
-        }
-      }
-    }
 
     button {
       @include themeTransition;
       background: none;
       border: none;
       font-size: 16px;
+
+      &.active {
+        color: $bright-blue;
+
+        &:hover {
+          color: $bright-blue;
+        }
+      }
     }
 
     &:hover {
@@ -47,13 +47,7 @@
   }
 }
 
-.active {
-  color: $bright-blue;
 
-  &:hover {
-    color: $bright-blue;
-  }
-}
 
 @media screen and (max-width: 479px) {
   .filter {

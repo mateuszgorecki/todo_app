@@ -22,18 +22,33 @@ const TasksFilter = ({ isDark }: Props) => {
     ctx.filterTasks('completed')
   }
 
-
+  const flag = ctx.tasksFlag
 
   return (
     <ul className={classes}>
       <li>
-        <button onClick={showAllTasksHandler}>All</button>
+        <button
+          className={flag === 'all' ? styles.active : ''}
+          onClick={showAllTasksHandler}
+        >
+          All
+        </button>
       </li>
       <li>
-        <button onClick={showActiveTasksHandler}>Active</button>
+        <button
+          className={flag === 'active' ? styles.active : ''}
+          onClick={showActiveTasksHandler}
+        >
+          Active
+        </button>
       </li>
       <li>
-        <button onClick={showCompletedTasksHandler}>Completed</button>
+        <button
+          className={flag === 'completed' ? styles.active : ''}
+          onClick={showCompletedTasksHandler}
+        >
+          Completed
+        </button>
       </li>
     </ul>
   )
