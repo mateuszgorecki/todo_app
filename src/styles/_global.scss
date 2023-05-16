@@ -4,6 +4,11 @@
 :root {
   --max_content_width: 580px;
   --content_padding: 20px;
+  --task_height: 65px;
+
+  @media screen and (max-width: 479px) {
+    --task_height: 50px;
+  }
 }
 
 * {

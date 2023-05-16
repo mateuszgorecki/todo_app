@@ -8,6 +8,7 @@
   gap: 20px;
   padding: 20px;
   width: 100%;
+  max-height: var(--task_height);
   border-bottom: 1px solid $very-light-grayish-blue;
 
   button {
@@ -92,19 +93,6 @@
     font-weight: 400;
     color: $darkest-text;
     position: relative;
-
-    // &::after {
-    //   content: '';
-    //   display: block;
-    //   height: .5px;
-    //   width: 100%;
-    //   background-color: $darkest-text;
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 0;
-    //   transform: translateY(-50%);
-
-    // }
   }
 }
 
@@ -177,7 +165,7 @@
 @media screen and (max-width: 479px) {
   .item {
     gap: 15px;
-    padding: 14px 20px;
+    padding: 15px 20px;
 
     button {
       &:first-of-type {
