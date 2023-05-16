@@ -12,10 +12,17 @@ interface Props {
 
 const CreateTask = ({ isDark }: Props) => {
   const [title, setTitle] = useState('')
+  const [error, setError] = useState('')
   const classes = `${styles.wrapper} ${isDark ? styles.dark : ''}`
 
   const setTitleHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setTitle(e.target.value)
+    const value = e.target.value
+    if (value.length >= 30) {
+      setError('Title is too long. Max length is 30 characters including spaces.')
+    } else {
+      setError('')
+      setTitle(e.target.value)
+    }
   }
 
   const ctx = useContext(TasksContext)
@@ -27,6 +34,7 @@ const CreateTask = ({ isDark }: Props) => {
       isCompleted: false,
     })
     setTitle('')
+    setError('')
   }
 
   return (
@@ -40,6 +48,7 @@ const CreateTask = ({ isDark }: Props) => {
           placeholder='Create a new todo...'
           maxLength={30}
         />
+        <span>{error}</span>
       </form>
     </TaskWrapper>
   )
