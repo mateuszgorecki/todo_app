@@ -50,6 +50,7 @@ const TasksContext = React.createContext({
   filterTasks: (filter: string) => {},
   removeTask: (taskId: number) => {},
   clearCompletedTasks: () => {},
+  tasksFlag: 'all'
 })
 
 export const TasksContextProvider = (props: Props) => {
@@ -97,6 +98,7 @@ export const TasksContextProvider = (props: Props) => {
     filterTasks: setFilter,
     removeTask: removeTaskHandler,
     clearCompletedTasks: clearCompletedTasks,
+    tasksFlag: filter
   }
 
   return (

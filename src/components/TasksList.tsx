@@ -20,11 +20,16 @@ const TasksList = ({ isDark }: Props) => {
     />
   ))
 
-  return (
-    <ul className={classes.list}>
-      {tasks.length > 0 ? tasks : <p>No tasks!</p>}
-    </ul>
-  )
+  const flag =
+    ctx.tasksFlag === 'completed' ? (
+      <p>No completed tasks!</p>
+    ) : ctx.tasksFlag === 'active' ? (
+      <p>No active tasks!</p>
+    ) : (
+      <p>No tasks!</p>
+    )
+
+  return <ul className={classes.list}>{tasks.length > 0 ? tasks : flag}</ul>
 }
 
 export default TasksList
