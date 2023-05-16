@@ -29,7 +29,7 @@ const CreateTask = ({ isDark }: Props) => {
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     ctx.addTask({
-      id: Math.random(),
+      id: Math.random().toString(),
       title: title,
       isCompleted: false,
     })

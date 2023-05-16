@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { Draggable } from 'react-beautiful-dnd'
 import styles from './TaskItem.module.scss'
 import TasksContext from './context/tasks-context'
 
@@ -7,17 +8,22 @@ interface Props {
   text: string
   isCompleted: boolean
   isDark: boolean
-  id: number
+  id: string
+  index: number
 }
 
 const TaskItem = (props: Props) => {
   const ctx = useContext(TasksContext)
   const deleteTaskHandler = () => {
-    ctx.removeTask(props.id)
+    requestAnimationFrame(() => {
+      ctx.removeTask(props.id)
+    })
   }
 
   const completeTaskHandler = () => {
-    ctx.completeTask(props.id)
+    requestAnimationFrame(() => {
+      ctx.completeTask(props.id)
+    })
   }
 
   const isCompletedStyles = props.isCompleted ? styles.completed : ''
@@ -25,11 +31,24 @@ const TaskItem = (props: Props) => {
   const classes = `${styles.item} ${isCompletedStyles} ${isDarkStyles}`
 
   return (
-    <li className={classes}>
-      <button onClick={completeTaskHandler}></button>
-      <p>{props.text}</p>
-      <button onClick={deleteTaskHandler}></button>
-    </li>
+    <Draggable
+      draggableId={props.id}
+      index={props.index}
+      key={props.id}
+    >
+      {(provided: any) => (
+        <div
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef}
+          className={classes}
+        >
+          <button onClick={completeTaskHandler}></button>
+          <p>{props.text}</p>
+          <button onClick={deleteTaskHandler}></button>
+        </div>
+      )}
+    </Draggable>
   )
 }
 

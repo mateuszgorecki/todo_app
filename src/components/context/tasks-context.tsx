@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 interface Task {
-  id: number
+  id: string
   title: string
   isCompleted: boolean
 }
@@ -11,32 +11,32 @@ interface Props {
 }
 const initialState: Task[] = [
   {
-    id: 1,
+    id: '1',
     title: 'Complete online JS course',
     isCompleted: true,
   },
   {
-    id: 2,
+    id: '2',
     title: 'Jog around the park 3x',
     isCompleted: false,
   },
   {
-    id: 3,
+    id: '3',
     title: '10 minutes meditaion',
     isCompleted: false,
   },
   {
-    id: 4,
+    id: '4',
     title: 'Read for 1 hour',
     isCompleted: false,
   },
   {
-    id: 5,
+    id: '5',
     title: 'Pick up groceries',
     isCompleted: false,
   },
   {
-    id: 6,
+    id: '6',
     title: 'Complete Todo App on Frontend Mentor',
     isCompleted: false,
   },
@@ -46,11 +46,12 @@ const TasksContext = React.createContext({
   tasks: initialState,
   filteredTasks: initialState,
   addTask: (task: Task) => {},
-  completeTask: (taskId: number) => {},
+  completeTask: (taskId: string) => {},
   filterTasks: (filter: string) => {},
-  removeTask: (taskId: number) => {},
+  removeTask: (taskId: string) => {},
   clearCompletedTasks: () => {},
-  tasksFlag: 'all'
+  reorderTasks: (startIndex: number, endIndex: number) => {},
+  tasksFlag: 'all',
 })
 
 export const TasksContextProvider = (props: Props) => {
@@ -71,7 +72,7 @@ export const TasksContextProvider = (props: Props) => {
     setTasks((prev) => [task, ...prev])
   }
 
-  const completeTaskHandler = (taskId: number) => {
+  const completeTaskHandler = (taskId: string) => {
     setTasks((prev) =>
       prev.map((task) => {
         if (task.id === taskId) {
@@ -82,12 +83,20 @@ export const TasksContextProvider = (props: Props) => {
     )
   }
 
-  const removeTaskHandler = (taskId: number) => {
+  const removeTaskHandler = (taskId: string) => {
     setTasks((prev) => prev.filter((task) => task.id !== taskId))
   }
 
   const clearCompletedTasks = () => {
     setTasks(tasks.filter((task) => !task.isCompleted))
+  }
+
+  const reorderTasksHandler = (startIndex: number, endIndex: number) => {
+    const updatedTasks = Array.from(tasks)
+    const [movedTask] = updatedTasks.splice(startIndex, 1)
+    updatedTasks.splice(endIndex, 0, movedTask)
+
+    setTasks(updatedTasks)
   }
 
   const contextValue = {
@@ -98,7 +107,8 @@ export const TasksContextProvider = (props: Props) => {
     filterTasks: setFilter,
     removeTask: removeTaskHandler,
     clearCompletedTasks: clearCompletedTasks,
-    tasksFlag: filter
+    reorderTasks: reorderTasksHandler,
+    tasksFlag: filter,
   }
 
   return (

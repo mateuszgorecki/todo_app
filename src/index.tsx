@@ -9,7 +9,7 @@ root.render(
   <React.StrictMode>
     <ThemeContextProvider>
       <TasksContextProvider>
-        <App />
+          <App />
       </TasksContextProvider>
     </ThemeContextProvider>
   </React.StrictMode>
