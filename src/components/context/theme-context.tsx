@@ -5,7 +5,7 @@ interface Props {
 }
 
 const ThemeContext = React.createContext({
-  isDarkTheme: false,
+  isDarkTheme: true,
   changeTheme: () => {},
 })
 

@@ -11,6 +11,7 @@
   max-height: var(--task_height);
   border-bottom: 1px solid $very-light-grayish-blue;
   background-color: $white;
+  border-radius: 5px 0 0;
 
   button {
     background: none;
