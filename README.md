@@ -30,7 +30,7 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 ### Links
 
-- Live Site URL: [Todo app](https://fascinating-pegasus-b76465.netlify.app/)
+- Live Site URL: [Todo app](https://dragndrop-todo.netlify.app/)
 
 ## My process
 
