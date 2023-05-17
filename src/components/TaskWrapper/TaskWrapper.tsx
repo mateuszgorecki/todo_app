@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import ThemeContext from './context/theme-context'
+import ThemeContext from '../../context/theme-context'
 import styles from './TaskWrapper.module.scss'
 
 interface Props {

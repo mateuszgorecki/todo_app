@@ -1,10 +1,10 @@
 import { useState } from 'react'
 
-import TaskWrapper from './TaskWrapper'
+import TaskWrapper from '../TaskWrapper/TaskWrapper'
 
 import styles from './CreateTask.module.scss'
 import { useContext } from 'react'
-import TasksContext from './context/tasks-context'
+import TasksContext from '../../context/tasks-context'
 
 interface Props {
   isDark: boolean

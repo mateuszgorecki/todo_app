@@ -1,9 +1,9 @@
 import { useContext } from 'react'
 
-import ThemeContext from './components/context/theme-context'
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
+import ThemeContext from './context/theme-context'
+import Header from './components/Header/Header'
+import Main from './components/Main/Main'
+import Footer from './components/Footer/Footer'
 
 import './styles/_global.scss'
 import styles from './App.module.scss'

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-import TasksFilter from './TasksFilter'
+import TasksFilter from './TasksFilter/TasksFilter'
 
 interface Props {
   children?: React.ReactNode

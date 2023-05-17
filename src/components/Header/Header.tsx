@@ -1,4 +1,4 @@
-import ThemeBtn from './ThemeBtn'
+import ThemeBtn from '../ThemeButton/ThemeBtn'
 
 import classes from './Header.module.scss'
 

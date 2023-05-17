@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import styles from './ThemeBtn.module.scss'
-import ThemeContext from './context/theme-context'
+import ThemeContext from '../../context/theme-context'
 const ThemeBtn = () => {
   const ctx = useContext(ThemeContext)
 

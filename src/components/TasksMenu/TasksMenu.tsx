@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import ShowFilter from './ShowFilter'
-import ThemeContext from './context/theme-context'
+import ShowFilter from '../ShowFilter'
+import ThemeContext from '../../context/theme-context'
 
 import styles from './TasksMenu.module.scss'
-import TasksContext from './context/tasks-context'
+import TasksContext from '../../context/tasks-context'
 
 const TasksMenu = () => {
   const themeCtx = useContext(ThemeContext)

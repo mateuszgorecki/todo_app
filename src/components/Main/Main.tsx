@@ -1,9 +1,9 @@
 import {useContext } from 'react'
-import ShowFilter from './ShowFilter'
+import ShowFilter from '../ShowFilter'
 
-import CreateTask from './CreateTask'
-import TasksContainer from './TasksContainer'
-import ThemeContext from './context/theme-context'
+import CreateTask from '../CreateTask/CreateTask'
+import TasksContainer from '../TasksContainer/TasksContainer'
+import ThemeContext from '../../context/theme-context'
 
 import styles from './Main.module.scss'
 

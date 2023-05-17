@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 import styles from './TaskItem.module.scss'
-import TasksContext from './context/tasks-context'
+import TasksContext from '../../context/tasks-context'
 
 interface Props {
   children?: React.ReactNode

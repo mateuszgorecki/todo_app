@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import styles from './TasksFilter.module.scss'
-import TasksContext from './context/tasks-context'
+import TasksContext from '../../context/tasks-context'
 
 interface Props {
   isDark: boolean

@@ -1,5 +1,5 @@
-import TasksList from './TasksList'
-import TasksMenu from './TasksMenu'
+import TasksList from '../TasksList/TasksList'
+import TasksMenu from '../TasksMenu/TasksMenu'
 
 import styles from './TasksContainer.module.scss'
 

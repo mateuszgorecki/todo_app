@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import { DragDropContext } from 'react-beautiful-dnd'
-import TaskItem from './TaskItem'
-import StrictModeDroppable from './StrictModeDroppable'
-import TasksContext from './context/tasks-context'
+import TaskItem from '../TaskItem/TaskItem'
+import StrictModeDroppable from '../StrictModeDroppable'
+import TasksContext from '../../context/tasks-context'
 
 import classes from './TasksList.module.scss'
 
