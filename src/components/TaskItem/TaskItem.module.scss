@@ -1,7 +1,6 @@
 @import '../../styles/_mixins';
 @import '../../styles/_colors';
 
-
 .item {
   display: flex;
   align-items: center;
@@ -147,11 +146,10 @@
   }
 
   p {
-    color: $light-grayish-blue-1 ;
+    color: $light-grayish-blue-1;
   }
 
   &.completed {
-
     button {
       &:first-of-type {
         &:hover {
@@ -182,12 +180,27 @@
           width: 18px;
         }
 
+        &:hover {
+          border: 1px solid $very-light-grayish-blue;
+        }
+
+        &:active {
+          border: none;
+        }
       }
 
       &:last-of-type {
         width: 20px;
         height: 20px;
         opacity: 1;
+
+        &:hover {
+          filter: none;
+        }
+
+        &:active {
+          filter: brightness(2);
+        }
       }
     }
 
@@ -197,4 +210,13 @@
     }
   }
 
+  .dark {
+    button {
+      &:first-of-type {
+        &:hover {
+          border: 1px solid $very-dark-grayish-blue-2;
+        }
+      }
+    }
+  }
 }

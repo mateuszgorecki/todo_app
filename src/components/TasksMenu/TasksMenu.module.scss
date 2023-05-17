@@ -30,7 +30,7 @@
 
 .dark {
   p {
-   color: $very-dark-grayish-blue;
+    color: $very-dark-grayish-blue;
   }
 
   button {
@@ -38,6 +38,32 @@
 
     &:hover {
       color: $light-global-bg;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .menu {
+    button {
+      &:hover {
+        color: $light-grayish-blue;
+      }
+
+      &:active {
+        color: $very-dark-blue;
+      }
+    }
+  }
+
+  .dark {
+    button {
+      &:hover {
+        color: $very-dark-grayish-blue;
+      }
+
+      &:active {
+        color: $light-global-bg;
+      }
     }
   }
 }
