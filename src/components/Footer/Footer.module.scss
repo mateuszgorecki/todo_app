@@ -2,8 +2,12 @@
 @import '../../styles/_colors';
 
 .footer {
-  color: $very-dark-grayish-blue;
   margin: 15px 0;
+
+  p {
+    color: $very-dark-grayish-blue;
+    text-align: center;
+  }
 
   a {
     text-decoration: none;
