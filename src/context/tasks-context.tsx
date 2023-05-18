@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import {  getTodos } from '../api/firebase'
+
 interface Task {
   id: string
   title: string
@@ -9,6 +11,7 @@ interface Task {
 interface Props {
   children: React.ReactNode
 }
+
 const initialState: Task[] = [
   {
     id: '1',
@@ -41,6 +44,8 @@ const initialState: Task[] = [
     isCompleted: false,
   },
 ]
+
+getTodos()
 
 const TasksContext = React.createContext({
   tasks: initialState,
